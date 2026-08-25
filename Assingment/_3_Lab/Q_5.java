@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Q_4{
+public class Q_5{
 public static void main(String args[]){
 Scanner sc = new Scanner(System.in);
 int arr[] = new int[5];
