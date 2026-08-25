@@ -9,7 +9,7 @@ arr[i] = sc.nextInt();
 }
 int largestNum = arr[0];
 for (int i = 1; i < arr.length; i++){
-if (largestNum < arr[i]){
+if (largestNum < arr[i]){//Main logic here.
 largestNum = arr[i];
 }
 }
