@@ -1,38 +1,58 @@
-public class Q_18{
-int arr[] = new int[5];
-int top = -1;
+public class Practice{
+int arr[];
+int size;
+int top;
+Practice(int size){
+this.size = size;
+arr = new int[size];
+top = -1;
+}
+void push(int data){
+if (top == size-1){
+System.out.println("Stack Overflow.");
+return;
+}
+arr[++top] = data;
+System.out.println(data+" added in Stack.");
+}
 void pop(){
 if (top == -1){
-System.out.print("Underflow");
-} else {
-System.out.println("Deleted: "+arr[top--]);
+System.out.println("Stack Underflow.");
+return;
 }
+System.out.println(arr[top--]+" delete in Stack.");
 }
-void push(int value){
-if (top == arr.length-1){
-System.out.print("Overflow");
-} else {
-arr[++top] = value;
+void peek(){
+if (top == -1){
+System.out.println("Stack is Empty");
+return;
 }
+System.out.println("Top Element: "+arr[top]);
 }
 void display(){
 if (top == -1){
-System.out.print("Stack is Empty");
-} else {
+System.out.println("Stack is Empty");
+return;
+}
 System.out.print("Stack: ");
-for (int i = top; i >= 0; i--){
+for (int i = 0;i <= top;i++){
 System.out.print(arr[i]+" ");
 }
-System.out.println();
-}
+System.out.println("(Top)");
 }
 public static void main(String args[]){
-Q_18 i = new Q_18();
-i.push(10);
-i.push(20);
-i.push(30);
-i.display();
-i.pop();
-i.display();
+Practice p = new Practice(5);
+p.push(1);
+p.push(2);
+p.push(3);
+p.push(4);
+p.push(5);
+p.display();
+p.peek();
+p.pop();
+p.display();
+p.pop();
+p.display();
+p.peek();
 }
 }

@@ -3,8 +3,8 @@ public class Q_5{
 public static void main(String args[]){
 Scanner sc = new Scanner(System.in);
 int arr[] = new int[5];
-System.out.print("Enter Array Elements- ");
-for (int i = 0; i < 5; i++){
+System.out.print("Enter 5 Array Elements- ");
+for (int i = 0; i < arr.length; i++){
 arr[i] = sc.nextInt();
 }
 int smallestNum = arr[0],index = 0;
@@ -18,6 +18,7 @@ for (int i = index;i < arr.length-1;i++){//Shift other elements.
 arr[i] = arr[i+1];//shifting main logic.
 }
 arr[arr.length-1] = 0;//To show last elements also empty.
+System.out.print("Array: ");
 for (int el : arr){//Show array.
 System.out.print(el+" ");
 }

@@ -11,7 +11,7 @@ public static void main(String args[]){
 int M1[][] = {{1,2},{3,4}};
 int M2[][] = {{1,2},{3,4}};
 if (M1.length != M2.length || M1[0].length != M2[0].length){
-System.out.print("insure that matrices should be same order.");
+System.out.print("Matrix Addition is not possible.");
 return;
 }
 System.out.println("1st Array-\n");

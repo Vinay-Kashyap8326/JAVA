@@ -1,83 +1,88 @@
-import java.util.Scanner;
-class Q_17 {
-class Node {
-int data;
-Node prev, next;
-Node(int data) {
+public class Q_17{
+Node head;
+class Node{
+String data;
+Node prev;
+Node next;
+Node(String data){
 this.data = data;
-prev = next = null;
+this.prev = null;
+this.next = null;
 }
 }
-Node head = null;
-// Creation
-void create(int data) {
+void addFirst(String data){
 Node newNode = new Node(data);
-if (head == null) {
+if (head == null){
 head = newNode;
-} else {
-Node temp = head;
-while (temp.next != null) {
-temp = temp.next;
+return;
 }
-temp.next = newNode;
-newNode.prev = temp;
+newNode.next = head;
+head.prev = newNode;
+head = newNode;
 }
+void addLast(String data){
+Node newNode = new Node(data);
+if (head == null){
+head = newNode;
+return;
 }
-// Deletion
-void delete() {
-if (head == null) {
-System.out.println("List is empty");
+Node lastNode = head;
+while (lastNode.next != null){
+lastNode = lastNode.next;
+}
+lastNode.next = newNode;
+newNode.prev = lastNode;
+}
+void removeFirst(){
+if (head == null){
+System.out.println("List is Empty");
+return;
+}
+if (head.next == null){
+head = null;
 return;
 }
 head = head.next;
-if (head != null) {
 head.prev = null;
 }
-System.out.println("First element deleted");
-}
-// Display
-void display() {
-if (head == null) {
-System.out.println("List is empty");
+void removeLast(){
+if (head == null){
+System.out.println("List is Empty");
 return;
 }
-Node temp = head;
-while (temp != null) {
-System.out.print(temp.data + " <-> ");
-temp = temp.next;
+if (head.next == null){
+head = null;
+return;
+}
+Node curr = head;
+while (curr.next != null){
+curr = curr.next;
+}
+curr.prev.next = null;
+}
+void printList(){
+if (head == null){
+System.out.println("List is Empty");
+return;
+}
+Node curr = head;
+while (curr != null){
+System.out.print(curr.data+" <=> ");
+curr = curr.next;
 }
 System.out.println("null");
 }
-public static void main(String[] args) {
-Q_17 list = new Q_17();
-Scanner sc = new Scanner(System.in);
-int choice, data;
-do {
-System.out.println("\n1. Creation");
-System.out.println("2. Deletion");
-System.out.println("3. Display");
-System.out.println("4. Exit");
-System.out.print("Enter choice: ");
-choice = sc.nextInt();
-switch (choice) {
-case 1:
-  System.out.print("Enter data: ");
-  data = sc.nextInt();
-  list.create(data);
-  break;
-case 2:
-  list.delete();
-  break;
-case 3:
-  list.display();
-  break;
-case 4:
-  System.out.println("Program ended");
-  break;
-default:
-  System.out.println("Invalid choice");
-  }
-  } while (choice != 4);
-  sc.close();
-  }
-  }
+public static void main(String args[]){
+Q_17 p = new Q_17();
+p.addFirst("Vinay");
+p.addFirst("Shree");
+p.addLast("Ji");
+p.addLast("Mahan");
+p.addLast("Hai");
+p.printList();
+p.removeFirst();
+p.printList();
+p.removeLast();
+p.printList();
+}
+}

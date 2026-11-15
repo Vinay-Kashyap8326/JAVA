@@ -15,7 +15,7 @@ int index = 0;//to show position of number.
 boolean exist = false;//if not found element in array.
 for (int el : arr){//Reach on all elements.
 if (el == keyValue){//If founded then print it with position.
-System.out.print("Element Found On "+(index+1)+" Position");
+System.out.print("\nElement Found On "+(index+1)+" Position");
 exist = true;
 }
 index++;

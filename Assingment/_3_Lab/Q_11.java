@@ -12,7 +12,7 @@ int m1[][] = {{1,2},{3,4}};
 int m2[][] = {{5,6},{7,8}};
 int mul[][] = new int[m1.length][m2[0].length];
 if (m1[0].length != m2.length){
-System.out.print("insure that matrices should be R1=C2.");
+System.out.print("Matrix multiplication is not possible.");
 return;
 }
 System.out.println("1st Array-\n");
